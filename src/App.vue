@@ -1,26 +1,50 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="layout">
+    <Header />
+
+    <div class="content">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
+
+    <Footer class=" end"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/header/Header.vue"
+import Footer from "./components/footer/Footer.vue"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    componets: {
+        Header
+    },
+    setup() {
+    },
+    components: { Header, Footer }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "AvantGarde_bold", 'console';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: var(--dark);
 }
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
 </style>

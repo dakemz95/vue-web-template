@@ -1,0 +1,188 @@
+// --- Base ---
+
+@font-face {
+  font-family: AvantGarde_book;
+  src: url(../fonts/itc-avant-garde-gothic-book.otf);
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: AvantGarde_bold;
+  src: url(../fonts/itc-avant-garde-gothic-bold.otf);
+  font-weight: normal;
+  font-style: normal
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+.subtitle, p, label {
+
+  font-family: AvantGarde_book;
+}
+
+input, textarea {
+  border: 1px solid var(--dark);
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+}
+
+// --- End Base ---
+// --- Scrollbar ---
+
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--dark); 
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary); 
+  border-radius: 20px;
+  border: 2px solid #2c3e50;
+}
+
+// --- End Scrollbar ---
+// --- Butons ---
+
+.btn {
+  position: static;
+  background: #fff;
+  padding: .5em 1em;
+  border: none;
+  border-radius: .3em;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, .4);
+  text-decoration: none;
+  color: var(--dark);
+  transition: 
+    transform .01s,
+    background-color .2s
+  ;
+
+    &.btn-large {
+      padding: 1em 1.5em;
+      font-size: 1.5em;
+    }
+
+    &.btn-primary {
+      background-color: var(--primary);
+      
+    }
+
+    &.btn-secondary {
+      background-color: var(--secondary);
+      color: #fff;
+    }
+
+    &.btn-dark {
+      background-color: var(--dark);
+      color: #fff;
+    }
+
+    &.btn-ligth {
+      background-color: #fff;
+      
+    }
+
+    &:hover {
+      filter: brightness(.9);
+    }
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 1px 2px 2px rgba(0, 0, 0, .4);
+    }
+}
+
+// --- End Butons ---
+// --- Animations/Transitions ---
+
+// fade
+.face {
+  &-enter-active {
+    transition: 
+      transform 0.3s ease-out,
+      opacity 0.3S ease-out;
+  }
+  
+  &-enter-from,
+  &-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+// --- End Animations/Transitions
+
+// --- Utility ---
+.d-flex {
+  display: flex;
+  gap: 20px;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.end {
+    justify-content: end;
+  }
+
+  &.start {
+    justify-content: start;
+  }
+}
+
+.d-block {
+  display: block;
+}
+
+.text{
+  &-primary {
+    color: var(--primary);
+  }
+
+  &-secondary {
+    color: var(--secondary);
+  }
+
+  &-white {
+    color: #fff;
+  }
+  
+  &-gray {
+    color: var(--grey);
+  }
+
+  &-center {
+    text-align: center !important;
+  }
+  &-start {
+    text-align: left !important;
+  }
+  &-end {
+    text-align: right !important;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-family: AvantGarde_bold;
+}
