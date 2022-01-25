@@ -1,5 +1,6 @@
 # vue-web-template
 
+see on [live](vue-web-template.vercel.app)
 ## Project setup
 ```
 npm install
